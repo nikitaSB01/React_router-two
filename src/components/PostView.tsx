@@ -43,13 +43,22 @@ export default function PostView() {
     navigate(`/posts/${id}/edit`);
   };
 
-  if (!post) return <p>Загрузка...</p>;
+  const handleBack = () => {
+    navigate("/");
+  };
+
+  if (!post) return <p className="loader">Загрузка...</p>;
 
   return (
     <div>
       <p>{post.content}</p>
-      <button onClick={handleEdit}>Редактировать</button>
-      <button onClick={handleDelete}>Удалить</button>
+      <div className="actions">
+        <button onClick={handleEdit}>Редактировать</button>
+        <button onClick={handleDelete}>Удалить</button>
+        <button type="button" onClick={handleBack}>
+          На главную
+        </button>
+      </div>
     </div>
   );
 }
