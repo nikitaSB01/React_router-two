@@ -18,9 +18,11 @@ export default function NewPostPage() {
   };
 
   return (
-    <div>
-      <h2>Создание поста</h2>
-      <PostForm onSave={handleSave} />
+    <div className="container">
+      <div>
+        <h2>Создание поста</h2>
+        <PostForm onSave={handleSave} />
+      </div>
     </div>
   );
 }
